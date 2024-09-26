@@ -163,9 +163,3 @@ Description:
 Lists all available CLI commands with descriptions.
 
 ---
-
-### Conclusion
-
-This document lists all available commands for managing courses, staff, and staff allocations within the Staff Allocations App. Each command can be used in a terminal or command-line interface that supports Flask CLI commands.
-
----
