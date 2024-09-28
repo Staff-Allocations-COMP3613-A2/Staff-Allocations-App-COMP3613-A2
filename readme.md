@@ -1,18 +1,22 @@
-# Staff Allocations App - CLI Commands
+---
+
+Staff Allocations App - CLI Commands
 
 This document contains all the CLI commands available in the Staff Allocations App.
+
+---
 
 ## 1. Create a Course
 Command:
 ```bash
-flask create-course <course_id> <course_name> [course_description]
+flask create-course <course_name> <course_description>
 ```
 Description:  
-Creates a new course with the specified `course_id`, `course_name`, and an optional `course_description`.
+Creates a new course with the specified `course_name` and `course_description`.
 
 Example:
 ```bash
-flask create-course cs101 "Intro to Computer Science" "Basics of computer science and programming"
+flask create-course "Intro to Computer Science" "Basics of computer science and programming"
 ```
 
 ---
@@ -38,12 +42,12 @@ Command:
 flask update-course <course_id> [course_name] [course_description]
 ```
 Description:  
-Updates the name and/or description of the course with the specified `course_id`. You can update the course name or description by leaving the other argument blank.
+Updates the name and/or description of the course with the specified `course_id`. You can update the course name or description by leaving one of the arguments blank.
 
 Example:
 ```bash
-flask update-course cs101 "Introduction to CS"  # Only update the name
-flask update-course cs101 "" "Introduction to Computer Science"  # Only update the description
+flask update-course "FST10001" "Introduction to CS"  # Only update the name
+flask update-course "FST10001" "" "Introduction to Computer Science"  # Only update the description
 ```
 
 ---
@@ -58,7 +62,7 @@ Deletes the course with the specified `course_id` from the database.
 
 Example:
 ```bash
-flask delete-course cs101
+flask delete-course "FST1"
 ```
 
 ---
@@ -66,14 +70,14 @@ flask delete-course cs101
 ## 5. Create a Staff Member
 Command:
 ```bash
-flask create-staff <staff_id> <name> <role>
+flask create-staff <name> <role>
 ```
 Description: 
-Creates a new staff member with the given `staff_id`, `name`, and `role` (e.g., Lecturer, Teaching Assistant, etc.).
+Creates a new staff member with the given `name` and `role` (e.g., Lecturer, Teaching Assistant, etc.).
 
 Example:
 ```bash
-flask create-staff 1 "Alice Smith" "Lecturer"
+flask create-staff "Alice Smith" "Lecturer"
 ```
 
 ---
@@ -83,7 +87,7 @@ Command:
 ```bash
 flask list-staff
 ```
-Description: 
+Description:  
 Lists all staff members currently stored in the database.
 
 Example:
@@ -98,7 +102,7 @@ Command:
 ```bash
 flask update-staff <staff_id> [name] [role]
 ```
-Description:
+Description:  
 Updates the name and/or role of the staff member with the specified `staff_id`. You can choose to update only one attribute by leaving the other blank.
 
 Example:
@@ -130,11 +134,11 @@ Command:
 flask assign-staff <staff_id> <course_id>
 ```
 Description:  
-Assigns the staff member with the specified `staff_id` to the course with the specified `course_id`. Staff can be assigned to multiple courses.
+Assigns the staff member with the specified `staff_id` to the course with the specified `course_id`. Each staff member can only be assigned once to a course.
 
 Example:
 ```bash
-flask assign-staff 1 cs101
+flask assign-staff 1 "FST1"
 ```
 
 ---
@@ -149,7 +153,7 @@ Displays all staff members assigned to the course with the specified `course_id`
 
 Example:
 ```bash
-flask view-staff-allocations cs101
+flask view-staff-allocations "FST1"
 ```
 
 ---
