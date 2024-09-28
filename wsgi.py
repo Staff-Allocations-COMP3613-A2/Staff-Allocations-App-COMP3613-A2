@@ -58,12 +58,16 @@ import click
 
 # Command 1: Create a Course
 @app.cli.command("create-course", help="Creates a new course")
-@click.argument("course_id")
 @click.argument("course_name")
-@click.argument("course_description", required=False)
-def create_course_command(course_id, course_name, course_description=None):
-    course = CourseController.create_course(course_id, course_name, course_description)
-    print(f"Course '{course.course_name}' created successfully!")
+@click.argument("course_description")
+def create_course_command(course_name, course_description):
+    try:
+        course = CourseController.create_course(course_name, course_description)
+        print(f"Course '{course.course_name}' created with ID '{course.course_id}'!")
+    except ValueError as e:
+        print(e)
+
+
 
 # Command 2: List All Courses
 @app.cli.command("list-courses", help="Lists all available courses")
@@ -95,12 +99,12 @@ def delete_course_command(course_id):
 
 # Command 5: Create a Staff Member
 @app.cli.command("create-staff", help="Creates a new staff member")
-@click.argument("staff_id")
 @click.argument("name")
 @click.argument("role")
-def create_staff_command(staff_id, name, role):
-    staff = StaffController.create_staff(staff_id, name, role)
-    print(f"Staff '{name}' created successfully!")
+def create_staff_command(name, role):
+    staff = StaffController.create_staff(name, role)
+    print(f'Staff member {staff.name} created with ID {staff.staff_id}!')
+
 
 # Command 6: List All Staff Members
 @app.cli.command("list-staff", help="Lists all staff members")

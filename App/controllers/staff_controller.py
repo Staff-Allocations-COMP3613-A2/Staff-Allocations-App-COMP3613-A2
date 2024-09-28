@@ -2,8 +2,8 @@ from App.models.staff import Staff
 from App.database import db
 
 class StaffController:
-    def create_staff(staff_id, name, role):
-        staff = Staff(staff_id, name, role)
+    def create_staff(name, role):
+        staff = Staff(name, role)
         db.session.add(staff)
         db.session.commit()
         return staff
