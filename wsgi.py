@@ -8,6 +8,12 @@ from App.models import User
 from App.main import create_app
 from App.controllers import ( create_user, get_all_users_json, get_all_users, initialize )
 
+
+from App.controllers.course_controller import CourseController
+from App.controllers.staff_controller import StaffController
+from App.controllers.staff_allocation_controller import StaffAllocationController
+
+
 app = create_app()
 migrate = get_migrate(app)
 #-------------- SIR ---------------

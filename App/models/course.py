@@ -4,7 +4,7 @@ class Course(db.Model):
     __tablename__ = 'course'
 
     course_id = db.Column(db.String(10), primary_key=True)
-    course_name = db.Column(db.String(100), nullable=False)
+    course_name = db.Column(db.String(100), nullable=False, unique=True)
     course_description = db.Column(db.String(200), nullable=False)
 
     def __init__(self, course_name, course_description):
