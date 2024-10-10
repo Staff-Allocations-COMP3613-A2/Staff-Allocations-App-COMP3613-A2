@@ -1,5 +1,6 @@
 from App.models import User
 from App.database import db
+from werkzeug.security import check_password_hash
 
 def create_user(username, password):
     newuser = User(username=username, password=password)
@@ -31,3 +32,9 @@ def update_user(id, username):
         return db.session.commit()
     return None
     
+def authenticate_user(username, password):
+    user = User.query.filter_by(username=username).first()  # Retrieve the user by username
+    
+    if user and check_password_hash(user.password, password):  # Verify the password
+        return True  # Authentication successful
+    return False  # Authentication failed
