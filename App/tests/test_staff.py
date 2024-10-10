@@ -56,13 +56,10 @@ def test_delete_staff(test_app):
     with test_app.app_context():
         # Create a staff member to delete
         staff = StaffController.create_staff("John Doe", "Instructor")
-        
         # Delete the staff member
         result = StaffController.delete_staff(staff.staff_id)
-        
         # Validate staff member deletion
         assert result is True, "Staff deletion failed, expected True but got False"
         assert Staff.query.get(staff.staff_id) is None, f"Staff with ID {staff.staff_id} still exists after deletion"
-        
         # Test deleting a non-existent staff ID
         assert StaffController.delete_staff(9999) is False, "Expected False for invalid staff ID"  # Should return False for invalid ID

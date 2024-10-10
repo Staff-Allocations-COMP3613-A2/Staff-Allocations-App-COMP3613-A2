@@ -1,3 +1,59 @@
+**IMPLEMENTATION TESTING** 
+
+---
+
+## Postman API Testing
+
+To facilitate API testing for the Staff Allocations App, a Postman collection has been prepared. The collection contains pre-built requests for all major endpoints, including user authentication, course management, staff management, and staff allocations.
+
+### Tested Collection Package:
+The tested collection package , `Staff_Allocation_API_Collection.postman_test_run.json`, has been uploaded to the repository.
+
+### Postman Collection Link:
+You can also access the Postman collection directly via the following link:
+
+[Staff Allocations API Postman Collection](https://www.postman.com/tramdeo816034662/workspace/staff-allocations-api-testing/collection/33339653-cd129fa5-485e-437b-ba77-23b8be33ff62?action=share&creator=33339653&active-environment=33339653-3547a9b0-c024-4a10-93ed-b816c0f59a13)
+
+This collection includes all the necessary API requests to test the application's functionality through Postman, allowing you to interact with the API in a structured way.
+
+---
+
+Here’s an updated section for your `README.md` on how Integration Tests and Unit Tests were implemented and handled:
+
+---
+
+## Testing
+
+### Unit Tests
+Unit tests are designed to test individual components of the application in isolation. The tests for the application cover the following functionalities:
+
+- **User Management**: Tests for creating, authenticating, updating, and retrieving users.
+- **Staff Management**: Tests for creating, updating, deleting, and retrieving staff members.
+- **Course Management**: Tests for creating, updating, and deleting courses.
+- **Staff Allocation**: Tests for assigning staff to courses and viewing allocated staff.
+
+Each test case ensures that the respective functions behave as expected, verifying the correctness of both input and output.
+
+### Integration Tests
+Integration tests check the interaction between different components of the application. These tests focus on the following aspects:
+
+- **Database Interactions**: Validating that the application properly creates, updates, and deletes records in the database.
+- **Functionality Workflow**: Ensuring that the different controllers and models work together seamlessly, such as user authentication and staff allocation processes.
+
+The integration tests use an in-memory SQLite database, allowing for fast execution without affecting the production database. Each test runs within a test context, where the database is set up and torn down before and after each test.
+
+### Running the Tests
+To run the tests in the terminal, execute the following command:
+
+```bash
+pytest App/tests/
+```
+
+This command will discover and run all tests in the `App/tests/` directory, providing a summary of passed and failed tests.
+
+---
+
+
 ---
 
 Staff Allocations App - CLI Commands
@@ -5,6 +61,40 @@ Staff Allocations App - CLI Commands
 This document contains all the CLI commands available in the Staff Allocations App.
 
 ---
+Initital commands
+---
+
+## Create a New User for the Staff Allocations App
+Command:
+```bash
+flask create-user <username> <password>
+```
+Description:  
+Creates a new user with the given `username` and `password` for the app.
+
+Example:
+```bash
+flask create-user "admin" "password123"
+```
+
+---
+
+## Log In a User
+Command:
+```bash
+flask login <username> <password>
+```
+Description:  
+Logs in a user with the specified `username` and `password`.
+
+Example:
+```bash
+flask login "admin" "password123"
+```
+
+
+
+# Main Functionalities of Staff Allocations App
 
 ## 1. Create a Course
 Command:

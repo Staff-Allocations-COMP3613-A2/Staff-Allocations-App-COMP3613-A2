@@ -1,0 +1,441 @@
+{
+	"id": "ebeae260-b0b0-482b-9d12-eb645d5a169e",
+	"name": "New Collection",
+	"timestamp": "2024-10-10T04:53:08.413Z",
+	"collection_id": "33339653-cd129fa5-485e-437b-ba77-23b8be33ff62",
+	"folder_id": 0,
+	"environment_id": "33339653-3547a9b0-c024-4a10-93ed-b816c0f59a13",
+	"totalPass": 24,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-10-10T04:53:05.187Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "6142e7d2-4dfe-4372-930f-23184e558200",
+			"name": "Create System User (Staff Allocation Administrator)",
+			"url": "https://8080-staffalloca-staffalloca-tc1v9kagas5.ws-us116.gitpod.io/api/users",
+			"time": 269,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"User created successfully message": true,
+				"Response contains user ID": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User created successfully message": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains user ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				269
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"User created successfully message": true,
+					"Response contains user ID": true
+				}
+			]
+		},
+		{
+			"id": "b5602cf4-0095-4806-b9a9-93a3b4a316c5",
+			"name": "Admin Login",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/login",
+			"time": 244,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Returned Access Token": true,
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Returned Access Token": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				244
+			],
+			"allTests": [
+				{
+					"Returned Access Token": true,
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6b5eada6-fb82-47bd-bdcf-53e3d5ae1620",
+			"name": "Create Course",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/courses",
+			"time": 155,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Course created successfully": true
+			},
+			"testPassFailCounts": {
+				"Course created successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				155
+			],
+			"allTests": [
+				{
+					"Course created successfully": true
+				}
+			]
+		},
+		{
+			"id": "016c8586-20ee-41e5-809e-672895892fa9",
+			"name": "Get All Courses",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/courses",
+			"time": 145,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Courses are returned": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Courses are returned": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				145
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Courses are returned": true
+				}
+			]
+		},
+		{
+			"id": "33f37614-80b1-40e0-af7a-a8b7414eb737",
+			"name": "Create Staff",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/staff",
+			"time": 149,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Staff created": true,
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Staff created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"Staff created": true,
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "8c7485f8-9537-498f-82d4-a55e0df1b895",
+			"name": "Allocate Staff",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/staff_allocation",
+			"time": 174,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Staff assigned": true,
+				"Course allocation error": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Staff assigned": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Course allocation error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				174
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Staff assigned": true,
+					"Course allocation error": true
+				}
+			]
+		},
+		{
+			"id": "138689a9-1227-48d3-8e42-e790dc419a8a",
+			"name": "View Allocated Staff",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/courses/FST1/staff",
+			"time": 142,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Course staff retrieved": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Course staff retrieved": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				142
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Course staff retrieved": true
+				}
+			]
+		},
+		{
+			"id": "4208cafc-75eb-491a-8b30-8e0496f76ce0",
+			"name": "Update Course",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/courses/FST1",
+			"time": 154,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Course updated successfully": true
+			},
+			"testPassFailCounts": {
+				"Course updated successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				154
+			],
+			"allTests": [
+				{
+					"Course updated successfully": true
+				}
+			]
+		},
+		{
+			"id": "52ca1abf-22b8-42da-b79c-262b67942246",
+			"name": "Delete Course",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/courses/FST1",
+			"time": 143,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Course deleted successfully": true,
+				"Course not found": true
+			},
+			"testPassFailCounts": {
+				"Course deleted successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Course not found": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				143
+			],
+			"allTests": [
+				{
+					"Course deleted successfully": true,
+					"Course not found": true
+				}
+			]
+		},
+		{
+			"id": "edf7c29f-4e0a-40eb-a7f7-48821efa4c7a",
+			"name": "Update Staff",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/staff/1",
+			"time": 140,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Authorization token is valid": true,
+				"Staff updated successfully": true,
+				"Updated Staff Info in Response": true
+			},
+			"testPassFailCounts": {
+				"Authorization token is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Staff updated successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Updated Staff Info in Response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				140
+			],
+			"allTests": [
+				{
+					"Authorization token is valid": true,
+					"Staff updated successfully": true,
+					"Updated Staff Info in Response": true
+				}
+			]
+		},
+		{
+			"id": "656d431c-e213-435c-87f2-532501f9e2bf",
+			"name": "Delete Staff",
+			"url": "https://8080-staffalloca-staffalloca-3hacne6smxq.ws-us116.gitpod.io/api/staff/1",
+			"time": 142,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Authorization token is valid": true,
+				"Staff deleted successfully": true,
+				"Success message in response": true
+			},
+			"testPassFailCounts": {
+				"Authorization token is valid": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Staff deleted successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Success message in response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				142
+			],
+			"allTests": [
+				{
+					"Authorization token is valid": true,
+					"Staff deleted successfully": true,
+					"Success message in response": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1857,
+	"collection": {
+		"requests": [
+			{
+				"id": "6142e7d2-4dfe-4372-930f-23184e558200",
+				"method": "POST"
+			},
+			{
+				"id": "b5602cf4-0095-4806-b9a9-93a3b4a316c5",
+				"method": "POST"
+			},
+			{
+				"id": "6b5eada6-fb82-47bd-bdcf-53e3d5ae1620",
+				"method": "POST"
+			},
+			{
+				"id": "016c8586-20ee-41e5-809e-672895892fa9",
+				"method": "GET"
+			},
+			{
+				"id": "33f37614-80b1-40e0-af7a-a8b7414eb737",
+				"method": "POST"
+			},
+			{
+				"id": "8c7485f8-9537-498f-82d4-a55e0df1b895",
+				"method": "POST"
+			},
+			{
+				"id": "138689a9-1227-48d3-8e42-e790dc419a8a",
+				"method": "GET"
+			},
+			{
+				"id": "4208cafc-75eb-491a-8b30-8e0496f76ce0",
+				"method": "PUT"
+			},
+			{
+				"id": "52ca1abf-22b8-42da-b79c-262b67942246",
+				"method": "DELETE"
+			},
+			{
+				"id": "edf7c29f-4e0a-40eb-a7f7-48821efa4c7a",
+				"method": "PUT"
+			},
+			{
+				"id": "656d431c-e213-435c-87f2-532501f9e2bf",
+				"method": "DELETE"
+			}
+		]
+	}
+}
