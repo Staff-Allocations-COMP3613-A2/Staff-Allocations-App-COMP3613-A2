@@ -40,6 +40,7 @@ class CourseController:
             db.session.rollback()
             raise e
 
+    
     @staticmethod
     def delete_course(course_id):
         try:

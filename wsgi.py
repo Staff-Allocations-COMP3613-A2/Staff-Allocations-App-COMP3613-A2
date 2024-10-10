@@ -13,7 +13,7 @@ from App.controllers.course_controller import CourseController
 from App.controllers.staff_controller import StaffController
 from App.controllers.staff_allocation_controller import StaffAllocationController
 
-
+from App.controllers import get_user_by_username
 app = create_app()
 migrate = get_migrate(app)
 #-------------- SIR ---------------
@@ -25,8 +25,8 @@ def init():
 user_cli = AppGroup('user', help='User object commands')
 
 @user_cli.command("create", help="Creates a user")
-@click.argument("username", default="rob")
-@click.argument("password", default="robpass")
+@click.argument("username", default="bob")
+@click.argument("password", default="bobpass")
 def create_user_command(username, password):
     create_user(username, password)
     print(f'{username} created!')
@@ -61,8 +61,34 @@ from App.controllers.staff_allocation_controller import StaffAllocationControlle
 
 import click
 #-----------------------------
+# Command to Create User of Staff Allocations App
+@app.cli.command("create-user", help="Create a new user with a username and password")
+@click.argument("username")
+@click.argument("password")
+def create_user_command(username, password):
+    from App.controllers import create_user
+    try:
+        user = create_user(username, password)
+        print(f"User '{user.username}' created with ID '{user.id}'!")
+    except Exception as e:
+        print(f"Error creating user: {e}")
+
+
+# Command to Login
+@app.cli.command("login", help="Log in with username and password")
+@click.argument("username")
+@click.argument("password")
+def login_command(username, password):
+    """Log in a user with username and password."""
+    user = get_user_by_username(username)
+    if user and user.check_password(password):
+        print("You have successfully logged in.")
+    else:
+        print("Invalid username or password.")
+
 
 # Command 1: Create a Course
+
 @app.cli.command("create-course", help="Creates a new course")
 @click.argument("course_name")
 @click.argument("course_description")

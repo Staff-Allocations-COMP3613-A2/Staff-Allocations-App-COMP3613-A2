@@ -14,6 +14,6 @@ class Staff(db.Model):
     def get_json(self):
         return {
             'Staff ID': self.staff_id,
-            'Staff Member Name': self.name,
+            'Name': self.name,
             'Role': self.role
         }

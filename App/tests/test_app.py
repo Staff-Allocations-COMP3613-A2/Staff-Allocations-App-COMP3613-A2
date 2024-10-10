@@ -22,24 +22,24 @@ LOGGER = logging.getLogger(__name__)
 class UserUnitTests(unittest.TestCase):
 
     def test_new_user(self):
-        user = User("bob", "bobpass")
-        assert user.username == "bob"
+        user = User("admin", "password123")
+        assert user.username == "admin"
 
     # pure function no side effects or integrations called
     def test_get_json(self):
-        user = User("bob", "bobpass")
+        user = User("admin", "password123")
         user_json = user.get_json()
-        self.assertDictEqual(user_json, {"id":None, "username":"bob"})
+        self.assertDictEqual(user_json, {"id":None, "username":"admin"})
     
     def test_hashed_password(self):
         password = "mypass"
         hashed = generate_password_hash(password, method='sha256')
-        user = User("bob", password)
+        user = User("admin", password)
         assert user.password != password
 
     def test_check_password(self):
         password = "mypass"
-        user = User("bob", password)
+        user = User("admin", password)
         assert user.check_password(password)
 
 '''
@@ -57,8 +57,8 @@ def empty_db():
 
 
 def test_authenticate():
-    user = create_user("bob", "bobpass")
-    assert login("bob", "bobpass") != None
+    user = create_user("admin", "password123")
+    assert login("admin", "password123") != None
 
 class UsersIntegrationTests(unittest.TestCase):
 
@@ -68,7 +68,7 @@ class UsersIntegrationTests(unittest.TestCase):
 
     def test_get_all_users_json(self):
         users_json = get_all_users_json()
-        self.assertListEqual([{"id":1, "username":"bob"}, {"id":2, "username":"rick"}], users_json)
+        self.assertListEqual([{"id":1, "username":"admin"}, {"id":2, "username":"rick"}], users_json)
 
     # Tests data changes in the database
     def test_update_user(self):
