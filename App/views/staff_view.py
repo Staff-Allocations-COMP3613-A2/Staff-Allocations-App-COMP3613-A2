@@ -15,9 +15,10 @@ def create_staff():
     role = data.get('role')
     try:
         staff_member = StaffController.create_staff(name, role)
-        return jsonify({'name': staff_member.name, 'Role': staff_member.role}), 201
+        return jsonify([{'name': staff_member.name, 'Role': staff_member.role}]), 201  # Return as array
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
 
 
 @staff_bp.route('/api/staff/<int:staff_id>', methods=['PUT'])

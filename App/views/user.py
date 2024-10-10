@@ -17,12 +17,15 @@ def get_user_page():
     users = get_all_users()
     return render_template('users.html', users=users)
 
-@user_views.route('/users', methods=['POST'])
+@user_views.route('/api/users', methods=['POST'])
 def create_user_action():
-    data = request.form
-    flash(f"User {data['username']} created!")
-    create_user(data['username'], data['password'])
-    return redirect(url_for('user_views.get_user_page'))
+    data = request.json  # Switch from request.form to request.json for API use
+    try:
+        user = create_user(data['username'], data['password'])  # Create the user
+        return jsonify({'message': f"User {user.username} created with id {user.id}"}), 201  # Return success message with status code 201
+    except Exception as e:
+        return jsonify({'message': f"Error: {str(e)}"}), 400  # Return error message if there's an issue
+
 
 @user_views.route('/api/users', methods=['GET'])
 def get_users_action():

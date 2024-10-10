@@ -49,7 +49,16 @@ def logout_action():
 '''
 API Routes
 '''
+@auth_views.route('/api/register', methods=['POST'])
+def user_register_api():
+    data = request.json
+    try:
+        user = create_user(data['username'], data['password'])
+        return jsonify(message=f"user {user.username} created successfully with id {user.id}"), 201
+    except Exception as e:
+        return jsonify(message=str(e)), 400
 
+        
 @auth_views.route('/api/login', methods=['POST'])
 def user_login_api():
   data = request.json
